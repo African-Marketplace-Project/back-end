@@ -6,5 +6,5 @@ const port = process.env.PORT || 9000
 
 
 server.listen(port, function (){
-    console.log(`/n Server is listening on port ${port} \n`)
+    console.log(` Server is listening on port ${port} \n`.rainbow)
 })

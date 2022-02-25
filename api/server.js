@@ -1,7 +1,7 @@
 const express = require("express");
 const helmet = require("helmet");
 const cors = require("cors");
-
+const colors = require("colors");
 
 
 const server = express();
@@ -9,6 +9,7 @@ const server = express();
 server.use(helmet());
 server.use(express.json());
 server.use(cors({ origin: '*' }))
+server.use(colors.rainbow)
  
 
 
