@@ -8,7 +8,7 @@ module.exports = ( req, res, next ) => {
         jwt.verify (token, process.env.JWT_SECRET, (err, decodedToken) => {
             if (err) {
                 res.status(401).json({ 
-                    message: "invalid credentils"
+                    message: "invalid credentials"
                 })
             } else {
                 next();
