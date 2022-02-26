@@ -1,19 +1,19 @@
 exports.up = function (knex) {
-    return knex.schema.createTable('product', item => {
-        item.increments();
+    return knex.schema.createTable('product', product => {
+        product.increments();
 
-        item.string('name', 128)
+        product.string('name', 128)
             .notNullable()
 
-        item.string('description', 1500)
+        product.string('description', 500)
 
-        item.string('city', 50)
+        product.string('city', 50)
             .notNullable()
 
-        item.float('price')
+        product.float('price')
             .notNullable()
 
-        item.integer('user_id')
+        product.integer('user_id')
             .notNullable()
             .unsigned()
             .references('id') //references the id column in the user table

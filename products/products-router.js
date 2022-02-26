@@ -1,11 +1,21 @@
 const router = require("express").Router();
+const Items = require("./products-model");
 
 
+router.get("/", async (req, res) => {
+    try {
+        const items = await Items.getAllProducts();
+        Promise.all(items.map(async item => {
+            return item;
+        })).then(items => {
+            res.status(200).json(items);
+        })
 
-
-router.get("/", async (req, res) => {  //get all products
-    next()
+    } catch (error) {
+        res.status(500).json({ error });
+    }
 });
+
 
 router.get("/:id", async (req, res) => { //get one product
     next()

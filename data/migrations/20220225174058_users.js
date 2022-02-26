@@ -13,6 +13,7 @@ exports.up = function (knex) {
             .notNullable();
 
         user.string('password', 128)
+        .notNullable();
 
 
 

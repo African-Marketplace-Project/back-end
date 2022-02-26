@@ -1,29 +1,19 @@
 const router = require("express").Router();
-
-
+const Users = require("./users-model.js");
+const Items = require("../products/products-model.js");
 
 
 
 router.get("/", (req, res) => { //get all users
-    next()
+    Users.getAll()
+        .then(users => {
+            res.status(200).json(users);
+        })
+        .catch(err => {
+            res.status(500).json({ err });
+        });
 });
 
-
-
-router.get("/:id", async (req, res) => { //get one user 
-    next()
-});
-
-
-router.put("/:id", (req, res) => { //update one user
-   next()
-});
-
-
-
-router.delete("/:id", (req, res) => { //delete one user
-    next()
-});
 
 
 
