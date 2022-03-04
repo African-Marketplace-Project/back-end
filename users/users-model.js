@@ -6,6 +6,7 @@ module.exports = {
     getAll,
     findBy,
     getUserById,
+    getProductByUser,
     updateUser,
     deleteUser,
     };
@@ -28,6 +29,10 @@ async function addUser(user) {
     const [id] = await db("user").insert(user, "id");
 
     return getUserById(id);
+}
+
+function getProductByUser(id) {
+    return db("item").where({ "user_id": id });
 }
 
 async function updateUser(id, changes) {
